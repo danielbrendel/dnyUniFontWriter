@@ -8,7 +8,7 @@
 
 	Version: 0.1
 	Contact: Daniel Brendel<at>gmail<dot>com
-	GitHub: https://github.com/dny-coder
+	GitHub: https://github.com/danielbrendel
 
 	Licence: CC BY-NC-ND 4.0 International
 			 https://creativecommons.org/licenses/by-nc-nd/4.0/

@@ -12,7 +12,7 @@
 
 	Version: 0.1
 	Contact: Daniel Brendel<at>gmail<dot>com
-	GitHub: https://github.com/dny-coder
+	GitHub: https://github.com/danielbrendel
 
 	Licence: CC BY-NC-ND 4.0 International
 			 https://creativecommons.org/licenses/by-nc-nd/4.0/
@@ -22,7 +22,7 @@
 #define PROGRAM_VERSION "0.1"
 #define PROGRAM_AUTHOR "Daniel Brendel"
 #define PROGRAM_CONTACT "Daniel Brendel<at>gmail<dot>com"
-#define PROGRAM_WEBSITE "https://github.com/dny-coder"
+#define PROGRAM_WEBSITE "https://github.com/danielbrendel"
 #define HK_TOGGLE 1
 
 namespace dnyUniFontWriter {
