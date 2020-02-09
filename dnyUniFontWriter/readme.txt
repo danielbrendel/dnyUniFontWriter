@@ -5,9 +5,9 @@ UniFont Writer
 
 Version: 0.1
 Contact: dbrendel1988<at>gmail<dot>com
-GitHub: https://github.com/danielbrendel
+GitHub: https://github.com/danielbrendel/
 
-Licence: CC BY-NC-ND 4.0 International
+License: The MIT License
 		 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 Description:
