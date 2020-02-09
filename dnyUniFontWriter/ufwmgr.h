@@ -18,7 +18,7 @@
 	(C) 2018 by Daniel Brendel
 
 	Version: 0.1
-	Contact: dbrendel1988<at>yahoo<dot>com
+	Contact: dbrendel1988<at>gmail<dot>com
 	GitHub: https://github.com/danielbrendel
 
 	Licence: CC BY-NC-ND 4.0 International
