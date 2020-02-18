@@ -7,8 +7,7 @@ Version: 0.1
 Contact: dbrendel1988<at>gmail<dot>com
 GitHub: https://github.com/danielbrendel/
 
-License: The MIT License
-		 https://creativecommons.org/licenses/by-nc-nd/4.0/
+Released under the MIT license
 
 Description:
 	This program is a tool to be used for using various fontsets available via Unicode in other applications.
