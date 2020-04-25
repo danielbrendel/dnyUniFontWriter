@@ -11,7 +11,7 @@
 	GitHub: https://github.com/danielbrendel/
 
 	License: The MIT License
-			 https://creativecommons.org/licenses/by-nc-nd/4.0/
+			 
 */
 
 #pragma comment(lib, "user32.lib")
