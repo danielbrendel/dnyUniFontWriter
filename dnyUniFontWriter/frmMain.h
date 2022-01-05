@@ -8,7 +8,7 @@
 /*
 	UniFont Writer (dnyUniFontWriter) developed by Daniel Brendel
 
-	(C) 2018 - 2020 by Daniel Brendel
+	(C) 2018 - 2022 by Daniel Brendel
 
 	Version: 0.1
 	Contact: dbrendel1988<at>gmail<dot>com
@@ -134,7 +134,7 @@ namespace dnyUniFontWriter {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->lvFontList = (gcnew System::Windows::Forms::ListView());
 			this->chFontName = (gcnew System::Windows::Forms::ColumnHeader());
 			this->chAlphabet = (gcnew System::Windows::Forms::ColumnHeader());
@@ -177,6 +177,7 @@ namespace dnyUniFontWriter {
 			this->lvFontList->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lvFontList->FullRowSelect = true;
+			this->lvFontList->HideSelection = false;
 			this->lvFontList->Location = System::Drawing::Point(0, 109);
 			this->lvFontList->Name = L"lvFontList";
 			this->lvFontList->Size = System::Drawing::Size(585, 159);
@@ -271,14 +272,14 @@ namespace dnyUniFontWriter {
 					this->toggleToolStripMenuItem, this->toolStripMenuItem1, this->exitToolStripMenuItem
 			});
 			this->ctxTNAMenu->Name = L"ctxTNAMenu";
-			this->ctxTNAMenu->Size = System::Drawing::Size(111, 76);
+			this->ctxTNAMenu->Size = System::Drawing::Size(110, 76);
 			this->ctxTNAMenu->Opening += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::ctxTNAMenu_Opening);
 			// 
 			// showToolStripMenuItem
 			// 
 			this->showToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"showToolStripMenuItem.Image")));
 			this->showToolStripMenuItem->Name = L"showToolStripMenuItem";
-			this->showToolStripMenuItem->Size = System::Drawing::Size(110, 22);
+			this->showToolStripMenuItem->Size = System::Drawing::Size(109, 22);
 			this->showToolStripMenuItem->Text = L"Show";
 			this->showToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::showToolStripMenuItem_Click);
 			// 
@@ -286,20 +287,20 @@ namespace dnyUniFontWriter {
 			// 
 			this->toggleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toggleToolStripMenuItem.Image")));
 			this->toggleToolStripMenuItem->Name = L"toggleToolStripMenuItem";
-			this->toggleToolStripMenuItem->Size = System::Drawing::Size(110, 22);
+			this->toggleToolStripMenuItem->Size = System::Drawing::Size(109, 22);
 			this->toggleToolStripMenuItem->Text = L"Toggle";
 			this->toggleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem1
 			// 
 			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
-			this->toolStripMenuItem1->Size = System::Drawing::Size(107, 6);
+			this->toolStripMenuItem1->Size = System::Drawing::Size(106, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem.Image")));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(110, 22);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(109, 22);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
 			// 
@@ -347,20 +348,20 @@ namespace dnyUniFontWriter {
 			// 
 			this->toggleToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toggleToolStripMenuItem1.Image")));
 			this->toggleToolStripMenuItem1->Name = L"toggleToolStripMenuItem1";
-			this->toggleToolStripMenuItem1->Size = System::Drawing::Size(110, 22);
+			this->toggleToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
 			this->toggleToolStripMenuItem1->Text = L"Toggle";
 			this->toggleToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem1_Click);
 			// 
 			// toolStripMenuItem2
 			// 
 			this->toolStripMenuItem2->Name = L"toolStripMenuItem2";
-			this->toolStripMenuItem2->Size = System::Drawing::Size(107, 6);
+			this->toolStripMenuItem2->Size = System::Drawing::Size(106, 6);
 			// 
 			// exitToolStripMenuItem1
 			// 
 			this->exitToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem1.Image")));
 			this->exitToolStripMenuItem1->Name = L"exitToolStripMenuItem1";
-			this->exitToolStripMenuItem1->Size = System::Drawing::Size(110, 22);
+			this->exitToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
 			this->exitToolStripMenuItem1->Text = L"Exit";
 			this->exitToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem1_Click);
 			// 

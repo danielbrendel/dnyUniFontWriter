@@ -7,7 +7,7 @@
 /*
 	UniFont Writer (dnyUniFontWriter) developed by Daniel Brendel
 
-	(C) 2018 - 2020 by Daniel Brendel
+	(C) 2018 - 2022 by Daniel Brendel
 
 	Version: 0.1
 	Contact: dbrendel1988<at>gmail<dot>com
@@ -134,7 +134,7 @@ namespace dnyUniFontWriter {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(frmNewFont::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmNewFont::typeid));
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
