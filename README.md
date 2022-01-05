@@ -13,7 +13,7 @@ This program is a tool to be used for using various fontsets available via Unico
 When activated the program replaces the letters from a-z with the letters of a currently selected fontset
 regardless where you type in your text. Fonts can be defined via text-files. It uses UTF-16 encoding.
 Note: The target window where you type must support UTF-16 encoding in order to display the fontset
-properly. If not, it results in unwanted Unicode characters or other unwanted characters.
+properly. If not, it may result in unwanted characters.
 
 ## Usage:
 * Start the program
