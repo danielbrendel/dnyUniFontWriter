@@ -375,8 +375,9 @@ namespace dnyUniFontWriter {
 			// 
 			// createToolStripMenuItem
 			// 
+			this->createToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"createToolStripMenuItem.Image")));
 			this->createToolStripMenuItem->Name = L"createToolStripMenuItem";
-			this->createToolStripMenuItem->Size = System::Drawing::Size(144, 26);
+			this->createToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->createToolStripMenuItem->Text = L"Create...";
 			this->createToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::createToolStripMenuItem_Click);
 			// 
@@ -394,7 +395,7 @@ namespace dnyUniFontWriter {
 			// 
 			this->aboutToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"aboutToolStripMenuItem.Image")));
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(139, 26);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->aboutToolStripMenuItem->Text = L"About";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
@@ -402,7 +403,7 @@ namespace dnyUniFontWriter {
 			// 
 			this->gitHubToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gitHubToolStripMenuItem.Image")));
 			this->gitHubToolStripMenuItem->Name = L"gitHubToolStripMenuItem";
-			this->gitHubToolStripMenuItem->Size = System::Drawing::Size(139, 26);
+			this->gitHubToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->gitHubToolStripMenuItem->Text = L"GitHub";
 			this->gitHubToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::gitHubToolStripMenuItem_Click);
 			// 
@@ -450,44 +451,55 @@ namespace dnyUniFontWriter {
 	private: bool bHideOnStartup;
 
 	private: bool LoadFontSets() {
-				 array<System::String^>^ aFileNames = Directory::GetFiles(Path::GetDirectoryName(Application::ExecutablePath) + "\\fontsets");
+		array<System::String^>^ aFileNames = Directory::GetFiles(Path::GetDirectoryName(Application::ExecutablePath) + "\\fontsets");
 
-				 IEnumerator^ oFileEnumerator = aFileNames->GetEnumerator();
-				 while (oFileEnumerator->MoveNext())
-				 {
-					System::String^ szFileName = safe_cast<System::String^>(oFileEnumerator->Current);
-					std::wstring wszFileName = msclr::interop::marshal_as<std::wstring>(szFileName);
+		IEnumerator^ oFileEnumerator = aFileNames->GetEnumerator();
+		while (oFileEnumerator->MoveNext())
+		{
+		System::String^ szFileName = safe_cast<System::String^>(oFileEnumerator->Current);
+		std::wstring wszFileName = msclr::interop::marshal_as<std::wstring>(szFileName);
 
-					if (!g_oUFWMgr.LoadLetterFile(wszFileName)) {
-						MessageBox::Show("LoadLetterFile() failed", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-						return false;
-					}
-				 }
+		if (!g_oUFWMgr.LoadLetterFile(wszFileName)) {
+			MessageBox::Show("LoadLetterFile() failed", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return false;
+		}
+		}
 
-				 for (size_t i = 0; i < g_oUFWMgr.GetFontSetCount(); i++) {
-					 letter_data_s sCurData;
+		for (size_t i = 0; i < g_oUFWMgr.GetFontSetCount(); i++) {
+			letter_data_s sCurData;
 
-					 if (!g_oUFWMgr.GetLetterData(i, sCurData)) {
-						 return false;
-					 }
+			if (!g_oUFWMgr.GetLetterData(i, sCurData)) {
+				return false;
+			}
 
-					 cli::array<System::String^>^ aItems = gcnew cli::array<System::String^>(3);
-					 marshal_context context;
-					 aItems[0] = context.marshal_as<System::String^>(sCurData.wszFontName);
+			cli::array<System::String^>^ aItems = gcnew cli::array<System::String^>(3);
+			marshal_context context;
+			aItems[0] = context.marshal_as<System::String^>(sCurData.wszFontName);
 
-					 System::String^ szAlphabet = "";
-					 for (size_t j = 0; j < UFWMGR_ALPHABETCHARAMOUNT; j++) {
-						 szAlphabet += context.marshal_as<System::String^>(sCurData.wszaLetterString[j]);
-					 }
+			System::String^ szAlphabet = "";
+			for (size_t j = 0; j < UFWMGR_ALPHABETCHARAMOUNT; j++) {
+				szAlphabet += context.marshal_as<System::String^>(sCurData.wszaLetterString[j]);
+			}
 
-					 aItems[1] = szAlphabet;
-					 aItems[2] = "";
-					 ListViewItem^ lvItem = gcnew ListViewItem(aItems);
-					 this->lvFontList->Items->Add(lvItem);
-				 }
+			aItems[1] = szAlphabet;
+			aItems[2] = "";
+			ListViewItem^ lvItem = gcnew ListViewItem(aItems);
+			this->lvFontList->Items->Add(lvItem);
+		}
 
-				 return true;
-			 }
+		return true;
+	}
+
+	public: System::Void AddNewFontset(System::String^ szFontName, System::String^ szAlphabet) {
+		cli::array<System::String^>^ aItems = gcnew cli::array<System::String^>(3);
+
+		aItems[0] = szFontName;
+		aItems[1] = szAlphabet;
+		aItems[2] = "";
+
+		ListViewItem^ lvItem = gcnew ListViewItem(aItems);
+		this->lvFontList->Items->Add(lvItem);
+	}
 
 	private: System::Void ToggleActivation() {
 				 //Toggle activation status
@@ -668,7 +680,7 @@ private: System::Void btnExit_Click(System::Object^  sender, System::EventArgs^ 
 			 this->Close();
 		 }
 private: System::Void btnAbout_Click(System::Object^  sender, System::EventArgs^  e) {
-			 MessageBox::Show(PROGRAM_NAME " v" PROGRAM_VERSION " developed by " PROGRAM_AUTHOR + Environment::NewLine +  Environment::NewLine + "Contact: " PROGRAM_CONTACT, "About", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			 MessageBox::Show(PROGRAM_NAME " v" PROGRAM_VERSION " developed by " PROGRAM_AUTHOR + Environment::NewLine +  Environment::NewLine + "Visit: " PROGRAM_WEBSITE, "About", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		 }
 private: System::Void showToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 			 //Hide icon, show form and normalize form status

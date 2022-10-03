@@ -25,6 +25,6 @@ properly. If not, it may result in unwanted characters.
 
 ## System Requirements:
 * Platform: x64
-* Operating System: Compatible Windows OS
-* Microsoft Visual C++ 2017 x64 Redistributable
+* Operating System: Windows 10/11
+* Microsoft Visual C++ 2019 x64 Redistributable
 * Microsoft .NET Framework 4.6.1
