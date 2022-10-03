@@ -5,3 +5,5 @@
 /x64/Release/dnyUniFontWriter.exp
 /x64/Release/dnyUniFontWriter.lib
 /x64/Release/dnyUniFontWriter.pdb
+/x64/Release/dnyUniFontWriter.exe.metagen
+/x64/Release/System.Data.dll
