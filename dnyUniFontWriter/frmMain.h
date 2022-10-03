@@ -95,7 +95,7 @@ namespace dnyUniFontWriter {
 	private: System::Windows::Forms::TextBox^  txtHotkey;
 
 	private: System::Windows::Forms::Label^  lblHotkeyInfo;
-	private: System::Windows::Forms::PictureBox^  picBanner;
+
 	private: System::Windows::Forms::Button^  btnAbout;
 	private: System::Windows::Forms::Button^  btnExit;
 	private: System::Windows::Forms::ContextMenuStrip^  ctxTNAMenu;
@@ -115,6 +115,8 @@ namespace dnyUniFontWriter {
 	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  gitHubToolStripMenuItem;
+	private: System::Windows::Forms::PictureBox^ pbBanner;
+
 
 
 	protected: 
@@ -142,7 +144,6 @@ namespace dnyUniFontWriter {
 			this->lblHotkey = (gcnew System::Windows::Forms::Label());
 			this->txtHotkey = (gcnew System::Windows::Forms::TextBox());
 			this->lblHotkeyInfo = (gcnew System::Windows::Forms::Label());
-			this->picBanner = (gcnew System::Windows::Forms::PictureBox());
 			this->btnAbout = (gcnew System::Windows::Forms::Button());
 			this->btnExit = (gcnew System::Windows::Forms::Button());
 			this->ctxTNAMenu = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
@@ -162,9 +163,10 @@ namespace dnyUniFontWriter {
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->gitHubToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picBanner))->BeginInit();
+			this->pbBanner = (gcnew System::Windows::Forms::PictureBox());
 			this->ctxTNAMenu->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbBanner))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// lvFontList
@@ -178,9 +180,10 @@ namespace dnyUniFontWriter {
 				static_cast<System::Byte>(0)));
 			this->lvFontList->FullRowSelect = true;
 			this->lvFontList->HideSelection = false;
-			this->lvFontList->Location = System::Drawing::Point(0, 109);
+			this->lvFontList->Location = System::Drawing::Point(0, 134);
+			this->lvFontList->Margin = System::Windows::Forms::Padding(4);
 			this->lvFontList->Name = L"lvFontList";
-			this->lvFontList->Size = System::Drawing::Size(585, 159);
+			this->lvFontList->Size = System::Drawing::Size(779, 195);
 			this->lvFontList->TabIndex = 0;
 			this->lvFontList->UseCompatibleStateImageBehavior = false;
 			this->lvFontList->View = System::Windows::Forms::View::Details;
@@ -206,9 +209,10 @@ namespace dnyUniFontWriter {
 			this->lblHotkey->AutoSize = true;
 			this->lblHotkey->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblHotkey->Location = System::Drawing::Point(15, 282);
+			this->lblHotkey->Location = System::Drawing::Point(20, 347);
+			this->lblHotkey->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblHotkey->Name = L"lblHotkey";
-			this->lblHotkey->Size = System::Drawing::Size(75, 20);
+			this->lblHotkey->Size = System::Drawing::Size(92, 25);
 			this->lblHotkey->TabIndex = 1;
 			this->lblHotkey->Text = L"Hotkey: ";
 			// 
@@ -217,37 +221,30 @@ namespace dnyUniFontWriter {
 			this->txtHotkey->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtHotkey->ForeColor = System::Drawing::Color::Green;
-			this->txtHotkey->Location = System::Drawing::Point(86, 283);
+			this->txtHotkey->Location = System::Drawing::Point(115, 348);
+			this->txtHotkey->Margin = System::Windows::Forms::Padding(4);
 			this->txtHotkey->Name = L"txtHotkey";
-			this->txtHotkey->Size = System::Drawing::Size(41, 21);
+			this->txtHotkey->Size = System::Drawing::Size(53, 24);
 			this->txtHotkey->TabIndex = 2;
 			// 
 			// lblHotkeyInfo
 			// 
 			this->lblHotkeyInfo->AutoSize = true;
-			this->lblHotkeyInfo->Location = System::Drawing::Point(133, 287);
+			this->lblHotkeyInfo->Location = System::Drawing::Point(177, 353);
+			this->lblHotkeyInfo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblHotkeyInfo->Name = L"lblHotkeyInfo";
-			this->lblHotkeyInfo->Size = System::Drawing::Size(25, 13);
+			this->lblHotkeyInfo->Size = System::Drawing::Size(31, 17);
 			this->lblHotkeyInfo->TabIndex = 3;
 			this->lblHotkeyInfo->Text = L"Info";
-			// 
-			// picBanner
-			// 
-			this->picBanner->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"picBanner.Image")));
-			this->picBanner->InitialImage = nullptr;
-			this->picBanner->Location = System::Drawing::Point(1, 27);
-			this->picBanner->Name = L"picBanner";
-			this->picBanner->Size = System::Drawing::Size(585, 85);
-			this->picBanner->TabIndex = 4;
-			this->picBanner->TabStop = false;
 			// 
 			// btnAbout
 			// 
 			this->btnAbout->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAbout.Image")));
 			this->btnAbout->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnAbout->Location = System::Drawing::Point(371, 274);
+			this->btnAbout->Location = System::Drawing::Point(495, 337);
+			this->btnAbout->Margin = System::Windows::Forms::Padding(4);
 			this->btnAbout->Name = L"btnAbout";
-			this->btnAbout->Size = System::Drawing::Size(104, 37);
+			this->btnAbout->Size = System::Drawing::Size(139, 46);
 			this->btnAbout->TabIndex = 5;
 			this->btnAbout->Text = L"About";
 			this->btnAbout->UseVisualStyleBackColor = true;
@@ -257,9 +254,10 @@ namespace dnyUniFontWriter {
 			// 
 			this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExit.Image")));
 			this->btnExit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnExit->Location = System::Drawing::Point(481, 274);
+			this->btnExit->Location = System::Drawing::Point(641, 337);
+			this->btnExit->Margin = System::Windows::Forms::Padding(4);
 			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(104, 37);
+			this->btnExit->Size = System::Drawing::Size(139, 46);
 			this->btnExit->TabIndex = 6;
 			this->btnExit->Text = L"Exit";
 			this->btnExit->UseVisualStyleBackColor = true;
@@ -267,19 +265,20 @@ namespace dnyUniFontWriter {
 			// 
 			// ctxTNAMenu
 			// 
+			this->ctxTNAMenu->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->ctxTNAMenu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->showToolStripMenuItem,
 					this->toggleToolStripMenuItem, this->toolStripMenuItem1, this->exitToolStripMenuItem
 			});
 			this->ctxTNAMenu->Name = L"ctxTNAMenu";
-			this->ctxTNAMenu->Size = System::Drawing::Size(110, 76);
+			this->ctxTNAMenu->Size = System::Drawing::Size(129, 88);
 			this->ctxTNAMenu->Opening += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::ctxTNAMenu_Opening);
 			// 
 			// showToolStripMenuItem
 			// 
 			this->showToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"showToolStripMenuItem.Image")));
 			this->showToolStripMenuItem->Name = L"showToolStripMenuItem";
-			this->showToolStripMenuItem->Size = System::Drawing::Size(109, 22);
+			this->showToolStripMenuItem->Size = System::Drawing::Size(128, 26);
 			this->showToolStripMenuItem->Text = L"Show";
 			this->showToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::showToolStripMenuItem_Click);
 			// 
@@ -287,20 +286,20 @@ namespace dnyUniFontWriter {
 			// 
 			this->toggleToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toggleToolStripMenuItem.Image")));
 			this->toggleToolStripMenuItem->Name = L"toggleToolStripMenuItem";
-			this->toggleToolStripMenuItem->Size = System::Drawing::Size(109, 22);
+			this->toggleToolStripMenuItem->Size = System::Drawing::Size(128, 26);
 			this->toggleToolStripMenuItem->Text = L"Toggle";
 			this->toggleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem1
 			// 
 			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
-			this->toolStripMenuItem1->Size = System::Drawing::Size(106, 6);
+			this->toolStripMenuItem1->Size = System::Drawing::Size(125, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem.Image")));
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(109, 22);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(128, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
 			// 
@@ -314,9 +313,10 @@ namespace dnyUniFontWriter {
 			// 
 			this->btnToggle->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnToggle.Image")));
 			this->btnToggle->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnToggle->Location = System::Drawing::Point(258, 275);
+			this->btnToggle->Location = System::Drawing::Point(344, 338);
+			this->btnToggle->Margin = System::Windows::Forms::Padding(4);
 			this->btnToggle->Name = L"btnToggle";
-			this->btnToggle->Size = System::Drawing::Size(104, 37);
+			this->btnToggle->Size = System::Drawing::Size(139, 46);
 			this->btnToggle->TabIndex = 7;
 			this->btnToggle->Text = L"Toggle";
 			this->btnToggle->UseVisualStyleBackColor = true;
@@ -324,13 +324,14 @@ namespace dnyUniFontWriter {
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->fileToolStripMenuItem,
 					this->fontsToolStripMenuItem, this->helpToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(588, 24);
+			this->menuStrip1->Size = System::Drawing::Size(784, 28);
 			this->menuStrip1->TabIndex = 8;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -341,27 +342,27 @@ namespace dnyUniFontWriter {
 					this->toolStripMenuItem2, this->exitToolStripMenuItem1
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
-			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
+			this->fileToolStripMenuItem->Size = System::Drawing::Size(46, 24);
 			this->fileToolStripMenuItem->Text = L"File";
 			// 
 			// toggleToolStripMenuItem1
 			// 
 			this->toggleToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toggleToolStripMenuItem1.Image")));
 			this->toggleToolStripMenuItem1->Name = L"toggleToolStripMenuItem1";
-			this->toggleToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
+			this->toggleToolStripMenuItem1->Size = System::Drawing::Size(138, 26);
 			this->toggleToolStripMenuItem1->Text = L"Toggle";
 			this->toggleToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem1_Click);
 			// 
 			// toolStripMenuItem2
 			// 
 			this->toolStripMenuItem2->Name = L"toolStripMenuItem2";
-			this->toolStripMenuItem2->Size = System::Drawing::Size(106, 6);
+			this->toolStripMenuItem2->Size = System::Drawing::Size(135, 6);
 			// 
 			// exitToolStripMenuItem1
 			// 
 			this->exitToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exitToolStripMenuItem1.Image")));
 			this->exitToolStripMenuItem1->Name = L"exitToolStripMenuItem1";
-			this->exitToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
+			this->exitToolStripMenuItem1->Size = System::Drawing::Size(138, 26);
 			this->exitToolStripMenuItem1->Text = L"Exit";
 			this->exitToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem1_Click);
 			// 
@@ -369,13 +370,13 @@ namespace dnyUniFontWriter {
 			// 
 			this->fontsToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->createToolStripMenuItem });
 			this->fontsToolStripMenuItem->Name = L"fontsToolStripMenuItem";
-			this->fontsToolStripMenuItem->Size = System::Drawing::Size(48, 20);
+			this->fontsToolStripMenuItem->Size = System::Drawing::Size(58, 24);
 			this->fontsToolStripMenuItem->Text = L"Fonts";
 			// 
 			// createToolStripMenuItem
 			// 
 			this->createToolStripMenuItem->Name = L"createToolStripMenuItem";
-			this->createToolStripMenuItem->Size = System::Drawing::Size(117, 22);
+			this->createToolStripMenuItem->Size = System::Drawing::Size(144, 26);
 			this->createToolStripMenuItem->Text = L"Create...";
 			this->createToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::createToolStripMenuItem_Click);
 			// 
@@ -386,14 +387,14 @@ namespace dnyUniFontWriter {
 					this->gitHubToolStripMenuItem
 			});
 			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
-			this->helpToolStripMenuItem->Size = System::Drawing::Size(44, 20);
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(55, 24);
 			this->helpToolStripMenuItem->Text = L"Help";
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"aboutToolStripMenuItem.Image")));
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(112, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(139, 26);
 			this->aboutToolStripMenuItem->Text = L"About";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
@@ -401,20 +402,30 @@ namespace dnyUniFontWriter {
 			// 
 			this->gitHubToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gitHubToolStripMenuItem.Image")));
 			this->gitHubToolStripMenuItem->Name = L"gitHubToolStripMenuItem";
-			this->gitHubToolStripMenuItem->Size = System::Drawing::Size(112, 22);
+			this->gitHubToolStripMenuItem->Size = System::Drawing::Size(139, 26);
 			this->gitHubToolStripMenuItem->Text = L"GitHub";
 			this->gitHubToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::gitHubToolStripMenuItem_Click);
 			// 
+			// pbBanner
+			// 
+			this->pbBanner->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbBanner.Image")));
+			this->pbBanner->Location = System::Drawing::Point(0, 31);
+			this->pbBanner->Name = L"pbBanner";
+			this->pbBanner->Size = System::Drawing::Size(780, 109);
+			this->pbBanner->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pbBanner->TabIndex = 9;
+			this->pbBanner->TabStop = false;
+			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(588, 318);
+			this->ClientSize = System::Drawing::Size(784, 391);
+			this->Controls->Add(this->pbBanner);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->btnToggle);
 			this->Controls->Add(this->btnExit);
 			this->Controls->Add(this->btnAbout);
-			this->Controls->Add(this->picBanner);
 			this->Controls->Add(this->lblHotkeyInfo);
 			this->Controls->Add(this->txtHotkey);
 			this->Controls->Add(this->lblHotkey);
@@ -422,13 +433,14 @@ namespace dnyUniFontWriter {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picBanner))->EndInit();
 			this->ctxTNAMenu->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbBanner))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
