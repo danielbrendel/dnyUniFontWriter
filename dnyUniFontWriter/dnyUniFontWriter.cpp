@@ -26,6 +26,6 @@ int main(array<System::String ^> ^args)
 	Application::SetCompatibleTextRenderingDefault(false); 
 
 	//Create and run main window
-	Application::Run(gcnew Form1(args));
+	Application::Run(gcnew frmMain(args));
 	return 0;
 }

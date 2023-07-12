@@ -156,7 +156,6 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resX" />
     <EmbeddedResource Include="frmMain.resX" />
     <EmbeddedResource Include="frmNewFont.resx">
       <DependentUpon>frmNewFont.h</DependentUpon>

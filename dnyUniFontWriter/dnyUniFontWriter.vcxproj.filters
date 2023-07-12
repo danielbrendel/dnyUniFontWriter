@@ -60,9 +60,6 @@
     <EmbeddedResource Include="frmMain.resX">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resX">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmNewFont.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>

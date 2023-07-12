@@ -46,12 +46,12 @@ namespace dnyUniFontWriter {
 	using namespace System::Reflection;
 
 	/// <summary>
-	/// Zusammenfassung für Form1
+	/// Zusammenfassung für frmMain
 	/// </summary>
-	public ref class Form1 : public System::Windows::Forms::Form
+	public ref class frmMain : public System::Windows::Forms::Form
 	{
 	public:
-		Form1(void)
+		frmMain(void)
 		{
 			InitializeComponent();
 			//
@@ -59,7 +59,7 @@ namespace dnyUniFontWriter {
 			//
 		}
 
-		Form1(array<System::String ^> ^args)
+		frmMain(array<System::String ^> ^args)
 		{
 			InitializeComponent();
 			
@@ -78,7 +78,7 @@ namespace dnyUniFontWriter {
 		/// <summary>
 		/// Verwendete Ressourcen bereinigen.
 		/// </summary>
-		~Form1()
+		~frmMain()
 		{
 			if (components)
 			{
@@ -136,7 +136,7 @@ namespace dnyUniFontWriter {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmMain::typeid));
 			this->lvFontList = (gcnew System::Windows::Forms::ListView());
 			this->chFontName = (gcnew System::Windows::Forms::ColumnHeader());
 			this->chAlphabet = (gcnew System::Windows::Forms::ColumnHeader());
@@ -186,7 +186,7 @@ namespace dnyUniFontWriter {
 			this->lvFontList->TabIndex = 0;
 			this->lvFontList->UseCompatibleStateImageBehavior = false;
 			this->lvFontList->View = System::Windows::Forms::View::Details;
-			this->lvFontList->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::lvFontList_SelectedIndexChanged);
+			this->lvFontList->SelectedIndexChanged += gcnew System::EventHandler(this, &frmMain::lvFontList_SelectedIndexChanged);
 			// 
 			// chFontName
 			// 
@@ -243,7 +243,7 @@ namespace dnyUniFontWriter {
 			this->btnAbout->TabIndex = 5;
 			this->btnAbout->Text = L"About";
 			this->btnAbout->UseVisualStyleBackColor = true;
-			this->btnAbout->Click += gcnew System::EventHandler(this, &Form1::btnAbout_Click);
+			this->btnAbout->Click += gcnew System::EventHandler(this, &frmMain::btnAbout_Click);
 			// 
 			// btnExit
 			// 
@@ -255,7 +255,7 @@ namespace dnyUniFontWriter {
 			this->btnExit->TabIndex = 6;
 			this->btnExit->Text = L"Exit";
 			this->btnExit->UseVisualStyleBackColor = true;
-			this->btnExit->Click += gcnew System::EventHandler(this, &Form1::btnExit_Click);
+			this->btnExit->Click += gcnew System::EventHandler(this, &frmMain::btnExit_Click);
 			// 
 			// ctxTNAMenu
 			// 
@@ -266,7 +266,7 @@ namespace dnyUniFontWriter {
 			});
 			this->ctxTNAMenu->Name = L"ctxTNAMenu";
 			this->ctxTNAMenu->Size = System::Drawing::Size(114, 88);
-			this->ctxTNAMenu->Opening += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::ctxTNAMenu_Opening);
+			this->ctxTNAMenu->Opening += gcnew System::ComponentModel::CancelEventHandler(this, &frmMain::ctxTNAMenu_Opening);
 			// 
 			// showToolStripMenuItem
 			// 
@@ -274,7 +274,7 @@ namespace dnyUniFontWriter {
 			this->showToolStripMenuItem->Name = L"showToolStripMenuItem";
 			this->showToolStripMenuItem->Size = System::Drawing::Size(113, 26);
 			this->showToolStripMenuItem->Text = L"Show";
-			this->showToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::showToolStripMenuItem_Click);
+			this->showToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::showToolStripMenuItem_Click);
 			// 
 			// toggleToolStripMenuItem
 			// 
@@ -282,7 +282,7 @@ namespace dnyUniFontWriter {
 			this->toggleToolStripMenuItem->Name = L"toggleToolStripMenuItem";
 			this->toggleToolStripMenuItem->Size = System::Drawing::Size(113, 26);
 			this->toggleToolStripMenuItem->Text = L"Toggle";
-			this->toggleToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem_Click);
+			this->toggleToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::toggleToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem1
 			// 
@@ -295,13 +295,13 @@ namespace dnyUniFontWriter {
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
 			this->exitToolStripMenuItem->Size = System::Drawing::Size(113, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
-			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem_Click);
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::exitToolStripMenuItem_Click);
 			// 
 			// niTNAIcon
 			// 
 			this->niTNAIcon->ContextMenuStrip = this->ctxTNAMenu;
 			this->niTNAIcon->Visible = true;
-			this->niTNAIcon->MouseDoubleClick += gcnew System::Windows::Forms::MouseEventHandler(this, &Form1::niTNAIcon_MouseDoubleClick);
+			this->niTNAIcon->MouseDoubleClick += gcnew System::Windows::Forms::MouseEventHandler(this, &frmMain::niTNAIcon_MouseDoubleClick);
 			// 
 			// btnToggle
 			// 
@@ -313,7 +313,7 @@ namespace dnyUniFontWriter {
 			this->btnToggle->TabIndex = 7;
 			this->btnToggle->Text = L"Toggle";
 			this->btnToggle->UseVisualStyleBackColor = true;
-			this->btnToggle->Click += gcnew System::EventHandler(this, &Form1::btnToggle_Click);
+			this->btnToggle->Click += gcnew System::EventHandler(this, &frmMain::btnToggle_Click);
 			// 
 			// menuStrip1
 			// 
@@ -345,7 +345,7 @@ namespace dnyUniFontWriter {
 			this->toggleToolStripMenuItem1->Name = L"toggleToolStripMenuItem1";
 			this->toggleToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
 			this->toggleToolStripMenuItem1->Text = L"Toggle";
-			this->toggleToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::toggleToolStripMenuItem1_Click);
+			this->toggleToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMain::toggleToolStripMenuItem1_Click);
 			// 
 			// toolStripMenuItem2
 			// 
@@ -358,7 +358,7 @@ namespace dnyUniFontWriter {
 			this->exitToolStripMenuItem1->Name = L"exitToolStripMenuItem1";
 			this->exitToolStripMenuItem1->Size = System::Drawing::Size(109, 22);
 			this->exitToolStripMenuItem1->Text = L"Exit";
-			this->exitToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::exitToolStripMenuItem1_Click);
+			this->exitToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMain::exitToolStripMenuItem1_Click);
 			// 
 			// fontsToolStripMenuItem
 			// 
@@ -373,7 +373,7 @@ namespace dnyUniFontWriter {
 			this->createToolStripMenuItem->Name = L"createToolStripMenuItem";
 			this->createToolStripMenuItem->Size = System::Drawing::Size(117, 22);
 			this->createToolStripMenuItem->Text = L"Create...";
-			this->createToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::createToolStripMenuItem_Click);
+			this->createToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::createToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -391,7 +391,7 @@ namespace dnyUniFontWriter {
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
 			this->aboutToolStripMenuItem->Size = System::Drawing::Size(112, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
-			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
+			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::aboutToolStripMenuItem_Click);
 			// 
 			// gitHubToolStripMenuItem
 			// 
@@ -399,20 +399,20 @@ namespace dnyUniFontWriter {
 			this->gitHubToolStripMenuItem->Name = L"gitHubToolStripMenuItem";
 			this->gitHubToolStripMenuItem->Size = System::Drawing::Size(112, 22);
 			this->gitHubToolStripMenuItem->Text = L"GitHub";
-			this->gitHubToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::gitHubToolStripMenuItem_Click);
+			this->gitHubToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMain::gitHubToolStripMenuItem_Click);
 			// 
 			// pbBanner
 			// 
 			this->pbBanner->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbBanner.Image")));
 			this->pbBanner->Location = System::Drawing::Point(0, 25);
-			this->pbBanner->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pbBanner->Margin = System::Windows::Forms::Padding(2);
 			this->pbBanner->Name = L"pbBanner";
 			this->pbBanner->Size = System::Drawing::Size(585, 89);
 			this->pbBanner->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbBanner->TabIndex = 9;
 			this->pbBanner->TabStop = false;
 			// 
-			// Form1
+			// frmMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -430,8 +430,8 @@ namespace dnyUniFontWriter {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
-			this->Name = L"Form1";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			this->Name = L"frmMain";
+			this->Load += gcnew System::EventHandler(this, &frmMain::frmMain_Load);
 			this->ctxTNAMenu->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -543,7 +543,7 @@ namespace dnyUniFontWriter {
 				   Form::WndProc(m);
 			   }
 
-	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void frmMain_Load(System::Object^  sender, System::EventArgs^  e) {
 				 //Form load event method
 
 				 this->Text = PROGRAM_NAME;
@@ -554,15 +554,15 @@ namespace dnyUniFontWriter {
 					 Application::Exit();
 				 }
 
-				 this->Shown += gcnew System::EventHandler(this, &Form1::Form1_Shown);
-				 this->Resize += gcnew System::EventHandler(this, &Form1::Form1_Resize);
-				 this->Closing += gcnew CancelEventHandler(this, &Form1::Form1_Closing);
-				 this->lvFontList->MouseDoubleClick += gcnew MouseEventHandler(this, &Form1::lvFontList_MouseDoubleClick);
-				 this->txtHotkey->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &Form1::txtHotkey_KeyUp);
+				 this->Shown += gcnew System::EventHandler(this, &frmMain::frmMain_Shown);
+				 this->Resize += gcnew System::EventHandler(this, &frmMain::frmMain_Resize);
+				 this->Closing += gcnew CancelEventHandler(this, &frmMain::frmMain_Closing);
+				 this->lvFontList->MouseDoubleClick += gcnew MouseEventHandler(this, &frmMain::lvFontList_MouseDoubleClick);
+				 this->txtHotkey->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &frmMain::txtHotkey_KeyUp);
 
 				 this->clrDefaultFormColor = this->BackColor;
 
-				 this->niTNAIcon->Click += gcnew System::EventHandler(this, &Form1::niTNAIcon_Click);
+				 this->niTNAIcon->Click += gcnew System::EventHandler(this, &frmMain::niTNAIcon_Click);
 				 this->niTNAIcon->Visible = false;
 				 #undef ExtractAssociatedIcon
 				 this->niTNAIcon->Icon = System::Drawing::Icon::ExtractAssociatedIcon(Assembly::GetExecutingAssembly()->Location);
@@ -590,13 +590,13 @@ namespace dnyUniFontWriter {
 
 				 this->CenterToScreen();
 			 }
-	private: System::Void Form1_Shown(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void frmMain_Shown(System::Object^ sender, System::EventArgs^ e) {
 				 //this->lvFontList->BackColor = System::Drawing::Color::FromArgb(0xFF, 0x82, 0xC5, 0xE6);
 
 				 if (bHideOnStartup)
 					 this->WindowState = FormWindowState::Minimized;
 			 }
-	private: System::Void Form1_Closing( Object^ sender, CancelEventArgs^ e ) {
+	private: System::Void frmMain_Closing( Object^ sender, CancelEventArgs^ e ) {
 				 //Form closing event
 
 				 File::WriteAllText(Path::GetDirectoryName(Application::ExecutablePath) + "\\hotkey.txt", this->txtHotkey->Text);
@@ -612,7 +612,7 @@ namespace dnyUniFontWriter {
 
 				 UnregisterHotKey(NULL, HK_TOGGLE);
 			 }
-	private: System::Void Form1_Resize(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void frmMain_Resize(System::Object^ sender, System::EventArgs^ e) {
 				//Called for form resize events
 
 				if (this->WindowState == FormWindowState::Minimized) { //Form shall be minimized
