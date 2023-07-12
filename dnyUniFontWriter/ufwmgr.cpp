@@ -4,7 +4,7 @@
 /*
 	UniFont Writer (dnyUniFontWriter) developed by Daniel Brendel
 
-	(C) 2018 - 2022 by Daniel Brendel
+	(C) 2018 - 2023 by Daniel Brendel
 
 	Version: 0.1
 	Contact: dbrendel1988<at>gmail<dot>com
