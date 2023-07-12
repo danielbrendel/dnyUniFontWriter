@@ -576,8 +576,7 @@ namespace dnyUniFontWriter {
 
 				 this->txtHotkey->Text = File::ReadAllText(Path::GetDirectoryName(Application::ExecutablePath) + "\\hotkey.txt");
 				 if (!RegisterHotKey((HWND)this->Handle.ToPointer(), HK_TOGGLE, MOD_CONTROL, Convert::ToInt32(this->txtHotkey->Text))) {
-					 MessageBox::Show("RegisterHotKey() failed", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 Application::Exit();
+					 MessageBox::Show("RegisterHotKey() failed: " + GetLastError().ToString(), "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				 }
 
 				 System::Windows::Forms::Keys oKey = (System::Windows::Forms::Keys)Convert::ToInt32(this->txtHotkey->Text);
